@@ -20,20 +20,20 @@ dbConnection();
 const {CLIENT_URL} = process.env;
 console.log(CLIENT_URL);
 
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		credentials: true,
-// 	})
-// );
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
 //Cors Option
-const corsOption = {
-    credentials:true,
-    origin:['http://localhost:3000','http://1.1.1.111:3000', CLIENT_URL]
-}
+// const corsOption = {
+//     credentials:true,
+//     origin:['http://localhost:3000','http://1.1.1.111:3000', CLIENT_URL]
+// }
 
 // //Configuration
-app.use(cors(corsOption));
+// app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
